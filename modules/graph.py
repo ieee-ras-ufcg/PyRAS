@@ -48,6 +48,7 @@ class Graph:
                 ),
                 name=name,
                 legendgroup='Points',
-                legendgrouptitle_text='Points'
+                legendgrouptitle_text='Points',
+                showlegend=True
             )
         )
