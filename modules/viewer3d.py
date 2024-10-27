@@ -136,6 +136,30 @@ class Viewer3D:
             )
         )
 
+    def add_trace(self, points, name, color=None, colorscale=None, range=None, colorbar=None):
+        self.figure.add_trace(
+            go.Scatter3d(
+                x=points[0],
+                y=points[1],
+                z=points[2],
+                mode='lines',
+                marker=dict(
+                    size=3,
+                    opacity=0.80,
+                    color=color,
+                    cmin= range[0] if colorbar is not None else None,
+                    cmax= range[1] if colorbar is not None else None,
+                    colorbar= dict(title=colorbar,lenmode='fraction', len=0.5) if colorbar is not None else colorbar,
+                    colorscale=colorscale
+                ),
+                name=name,
+                legendgroup='Traces',
+                legendgrouptitle_text='Traces',
+                showlegend=True
+            )
+        )
+
+
     def add_solid(self, vertices, name, color=None):
         self.figure.add_trace(
             go.Mesh3d(
