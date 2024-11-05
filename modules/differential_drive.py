@@ -80,6 +80,7 @@ class DifferentialDrive:
         return np.vstack((np.hstack((R, t)), [0, 0, 0, 1]))
     
     def turn_signal(self, theta, t):
+        theta = np.radians(theta)
         theta_dot = theta / t 
         phi_dot = theta_dot * self.s / (2 * self.r)
         phi_dot_signal = phi_dot * np.ones(int(t / self.dt))
