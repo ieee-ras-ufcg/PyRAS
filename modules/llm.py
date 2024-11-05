@@ -8,7 +8,7 @@ class LLM:
     def __init__(
         self, 
         system_role,
-        verbose=True    
+        verbose=False
     ):
         self.verbose = verbose # Toggle for debug messages
         self.system_role = system_role # Toggle for debug messages
