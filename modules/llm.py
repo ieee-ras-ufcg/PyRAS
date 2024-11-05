@@ -2,7 +2,7 @@ from openai import OpenAI
 from openai import OpenAIError
 
 # Make a `openai_key.py` in `modules\` and insert your token as a string to the openai_key variable
-from openai_key import openai_key 
+from modules.openai_key import openai_key 
 
 class LLM:
     def __init__(
