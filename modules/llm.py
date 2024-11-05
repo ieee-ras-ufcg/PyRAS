@@ -56,7 +56,7 @@ class LLM:
                 n=n_responses
             )
 
-            if self.verbose: print("Received")
+            if self.verbose: print("Received response.")
 
             # Extract response from completion first choice
             return completion.choices[0].message.content
