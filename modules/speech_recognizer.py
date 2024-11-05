@@ -6,9 +6,9 @@ class SpeechRecognizer:
         language="en-US", 
         verbose=True    
     ):
-        self.verbose=verbose   # Toggle for debug messages
-        self.is_listening=True # Toggle to turn on and off the recognizer
-        self.language=language # Recognizer language
+        self.verbose = verbose   # Toggle for debug messages
+        self.is_listening = True # Toggle to turn on and off the recognizer
+        self.language = language # Recognizer language
 
         # Create a recognizer and microphone instance
         self.recognizer = sr.Recognizer()
