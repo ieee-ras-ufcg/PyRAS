@@ -27,7 +27,7 @@ class LLM:
     def chat_completion(
         self, 
         prompt, 
-        model="gpt-3.5-turbo", 
+        model="gpt-4o-mini", 
         max_tokens=10,
         randomness=0,
         n_responses=1
