@@ -18,7 +18,7 @@ class SpeechRecognizer:
         self.speech_queue = []
 
         # Listen in the background stop function
-        self.stop_listen_in_background = False
+        self.stop_listen_in_background = None
 
     def process_audio(self, _, audio):
         try:
@@ -44,10 +44,10 @@ class SpeechRecognizer:
         self.stop_listen_in_background = self.recognizer.listen_in_background(self.microphone, self.process_audio)
 
     def stop_listening(self):
-        if self.stop_listen_in_background:
+        if self.stop_listen_in_background is not None:
             # Stop listen_in_background and toggle its function flag to false
             self.stop_listen_in_background()
-            self.stop_listen_in_background = False
+            self.stop_listen_in_background = None
 
             if self.verbose: print("Stopped listening.")
 
