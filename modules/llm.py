@@ -7,11 +7,9 @@ from modules.openai_key import openai_key
 class LLM:
     def __init__(
         self, 
-        system_role,
         verbose=False
     ):
         self.verbose = verbose # Toggle for debug messages
-        self.system_role = system_role # Toggle for debug messages
 
         try:
             # Start listening
@@ -26,6 +24,7 @@ class LLM:
 
     def chat_completion(
         self, 
+        system_role,
         prompt, 
         model="gpt-4o-mini", 
         max_tokens=10,
@@ -36,7 +35,7 @@ class LLM:
         messages = [
             {
                 "role": "system", 
-                "content": self.system_role
+                "content": system_role
             },
             {
                 "role": "user", 
