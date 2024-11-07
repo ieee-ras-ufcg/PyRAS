@@ -31,7 +31,8 @@ class DifferentialDrive:
         # Commands
         self.command = {
             "D" : self.drive_signal,
-            "T"  : self.turn_signal
+            "T" : self.turn_signal,
+            "C" : self.circle_signal
         }
 
     def kinematic_model(self, phi_dot_L, phi_dot_R):
