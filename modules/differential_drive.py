@@ -79,24 +79,35 @@ class DifferentialDrive:
         
         return np.vstack((np.hstack((R, t)), [0, 0, 0, 1]))
     
-    def turn_signal(self, theta, t):
-        theta = np.radians(theta)
-        theta_dot = theta / t 
+    def drive_signal(self, d, t):
+        v_B = d / t
+        phi_dot = v_B / self.r
+        phi_dot_signal = np.full(int(t / self.dt), phi_dot)
+
+        phi_dot_L_signal = phi_dot_signal
+        phi_dot_R_signal = phi_dot_signal
+
+        return phi_dot_L_signal, phi_dot_R_signal
+    
+    def turn_signal(self, a, t):
+        a = np.radians(a)
+        theta_dot = a / t 
         phi_dot = theta_dot * self.s / (2 * self.r)
-        phi_dot_signal = phi_dot * np.ones(int(t / self.dt))
+        phi_dot_signal = np.full(int(t / self.dt), phi_dot)
 
         phi_dot_L_signal = -phi_dot_signal
         phi_dot_R_signal =  phi_dot_signal
 
         return phi_dot_L_signal, phi_dot_R_signal
+    
+    def circle_signal(self, r, a, t):
+        a = np.radians(a)
 
-    def drive_signal(self, d, t):
-        v_B = d / t
-        phi_dot = v_B / self.r
-        phi_dot_signal = phi_dot * np.ones(int(t / self.dt))
+        phi_dot_L = (2 * a * r - a * self.s) /  (2 * t * self.r)
+        phi_dot_R = (2 * a * r + a * self.s) /  (2 * t * self.r)
 
-        phi_dot_L_signal = phi_dot_signal
-        phi_dot_R_signal = phi_dot_signal
+        phi_dot_L_signal = np.full(int(t / self.dt), phi_dot_L)
+        phi_dot_R_signal = np.full(int(t / self.dt), phi_dot_R)
 
         return phi_dot_L_signal, phi_dot_R_signal
     
