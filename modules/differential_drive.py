@@ -102,10 +102,12 @@ class DifferentialDrive:
         return phi_dot_L_signal, phi_dot_R_signal
     
     def circle_signal(self, r, a, t):
+        s = np.sign(r)
+        r = np.abs(r)
         a = np.radians(a)
 
-        phi_dot_L = (2 * a * r - a * self.s) /  (2 * t * self.r)
-        phi_dot_R = (2 * a * r + a * self.s) /  (2 * t * self.r)
+        phi_dot_L = (2 * a * r - s * a * self.s) /  (2 * t * self.r)
+        phi_dot_R = (2 * a * r + s * a * self.s) /  (2 * t * self.r)
 
         phi_dot_L_signal = np.full(int(t / self.dt), phi_dot_L)
         phi_dot_R_signal = np.full(int(t / self.dt), phi_dot_R)
