@@ -4,7 +4,7 @@ from openai import OpenAIError
 # Make a `openai_key.py` in `modules\` and insert your token as a string to the openai_key variable
 from modules.openai_key import openai_key 
 
-class LLM:
+class LargeLanguageModel:
     def __init__(
         self, 
         verbose=False
@@ -64,3 +64,5 @@ class LLM:
             if self.verbose: print(f"Chat completion failed: {e}.")
 
             return "" # Return empty string
+        
+variable = 10
