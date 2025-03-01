@@ -64,5 +64,3 @@ class LargeLanguageModel:
             if self.verbose: print(f"Chat completion failed: {e}.")
 
             return "" # Return empty string
-        
-variable = 10
