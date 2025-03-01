@@ -1,6 +1,7 @@
 cbor                            >= 1.0.0
 cbor2                           >= 5.5.1
 coppeliasim_zmqremoteapi_client >= 2.0.0
+inputs                          >= 0.5
 ipykernel                       >= 6.26.0
 ipython                         >= 8.17.2
 jupyter_client                  >= 8.6.0
