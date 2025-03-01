@@ -90,16 +90,3 @@ class XboxController:
 
             except UnpluggedError:
                 self.plugged = False
-
-
-try:
-    XC = XboxController()
-
-    while True:
-        print(XC.LT)
-
-except KeyboardInterrupt:
-    print("Gamepad input reading stopped externally.")
-
-except UnpluggedError:
-    print("Gamepad not found.")
