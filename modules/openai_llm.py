@@ -4,7 +4,7 @@ from openai import OpenAIError
 # Make a `openai_key.py` in `modules\` and insert your token as a string to the openai_key variable
 from modules.openai_key import openai_key 
 
-class LargeLanguageModel:
+class OpenAILLM:
     def __init__(
         self, 
         verbose=False
