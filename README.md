@@ -8,7 +8,7 @@ This repository is focused on exploring and learning robotics concepts with *Pyt
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/loolirer/PyRoLab
+    git clone https://github.com/ieee-ras-ufcg/PyRAS
     ```
 2. Create a Python Virtual Enviroment (highly recommended);
 3. Install required dependencies:
